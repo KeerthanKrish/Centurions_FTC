@@ -268,8 +268,8 @@ public class Red_Near_Board extends LinearOpMode {
             sleep(500);
 
             // Dropping the pixel to the board (arms and wrist)
-            left_shoulder.setTargetPosition(540);
-            right_shoulder.setTargetPosition(-540);
+            left_shoulder.setTargetPosition(150);
+            right_shoulder.setTargetPosition(-150);
             left_shoulder.setPower(0.3);
             right_shoulder.setPower(0.3);
             left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
