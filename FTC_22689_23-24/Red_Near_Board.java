@@ -218,7 +218,7 @@ public class Red_Near_Board extends LinearOpMode {
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(-0.5);
             right_drive_back.setPower(-0.5);
-            sleep(1750);
+            sleep(1500);
 
             // Go forward (all the way to the trapezoid in front of the board)
             left_drive_front.setPower(-0.5);
