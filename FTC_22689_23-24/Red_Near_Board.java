@@ -79,7 +79,7 @@ public class Red_Near_Board extends LinearOpMode {
         wrist = hardwareMap.get(Servo.class, "wrist_servo");
         hands = hardwareMap.get(Servo.class, "hands_servo");
         
-        wrist.setPosition(0.5);
+        wrist.setPosition(1);
         hands.setPosition(0.9);
 
         initTfod();
@@ -174,13 +174,6 @@ public class Red_Near_Board extends LinearOpMode {
         }
 
         if (pixelLoc == 1){
-            //Move forward 
-            // TODO: Maybe remove or later this
-            setPower(-0.5); //use NEGATIVE value for moving forward
-            left_drive_back.setPower(-0.5);
-            right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
-            right_drive_back.setPower(0.5);
-            sleep(700);
 
             //Turn to rigth
             // Assigning power for the left wheels
@@ -189,7 +182,7 @@ public class Red_Near_Board extends LinearOpMode {
             // Assigning power for the right wheels
             right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
             right_drive_back.setPower(-0.5);
-            sleep(1500);
+            sleep(1000);
 
             // Put purple pixel down
             left_drive_front.setPower(0);
@@ -208,7 +201,7 @@ public class Red_Near_Board extends LinearOpMode {
             // Assigning power for the right wheels
             right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
             right_drive_back.setPower(0.5);
-            sleep(500);
+            sleep(1000);
 
             /* 
                 Back up to first spot
@@ -225,7 +218,7 @@ public class Red_Near_Board extends LinearOpMode {
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(-0.5);
             right_drive_back.setPower(-0.5);
-            sleep(2500);
+            sleep(1750);
 
             // Go forward (all the way to the trapezoid in front of the board)
             left_drive_front.setPower(-0.5);
