@@ -175,7 +175,7 @@ public class Red_Near_Board extends LinearOpMode {
 
         if (pixelLoc == 1){
 
-            //Turn to rigth
+            //Turn to right
             // Assigning power for the left wheels
             left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
             left_drive_back.setPower(-0.5);
