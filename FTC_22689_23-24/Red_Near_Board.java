@@ -179,6 +179,7 @@ public class Red_Near_Board extends LinearOpMode {
                 right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
                 right_drive_back.setPower(0.5);
                 sleep(700);
+
                 //Turn to rigth
                 // Assigning power for the left wheels
                 left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
@@ -187,57 +188,82 @@ public class Red_Near_Board extends LinearOpMode {
                 right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
                 right_drive_back.setPower(-0.5);
                 sleep(500);
+
                 // Put purple pixel down
                 left_drive_front.setPower(0);
                 left_drive_back.setPower(0);
                 right_drive_front.setPower(0);
                 right_drive_back.setPower(0);
+
+                // Open the hand
+                hands.setPosition(0.5);
                 sleep(1000);
-                //Turn to right
+
+                //Turn to left (facing left side of the map)
                 // Assigning power for the left wheels
-                left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
-                left_drive_back.setPower(-0.5);
+                left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
+                left_drive_back.setPower(0.5);
                 // Assigning power for the right wheels
-                right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
-                right_drive_back.setPower(-0.5);
+                right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
+                right_drive_back.setPower(0.5);
                 sleep(500);
-                // Back up to first spot
+
+                /* 
+                    Back up to first spot
+                    Back up to the tile behind - get out of the pixel area
+                */
                 left_drive_front.setPower(0.5);
                 left_drive_back.setPower(0.5);
                 right_drive_front.setPower(-0.5);
                 right_drive_back.setPower(-0.5);
                 sleep(900);
-                // Turn to right
+
+                // Turn to right (facing board)
                 left_drive_front.setPower(-0.5);
                 left_drive_back.setPower(-0.5);
                 right_drive_front.setPower(-0.5);
                 right_drive_back.setPower(-0.5);
                 sleep(1350);
-                // Go forward
+
+                // Go forward (all the way to the trapezoid in front of the board)
                 left_drive_front.setPower(-0.5);
                 left_drive_back.setPower(-0.5);
                 right_drive_front.setPower(0.5);
                 right_drive_back.setPower(0.5);
                 sleep(3600);
-                //turn left
+
+                // turn left (to face perpendicular to the board)
                 left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
                 left_drive_back.setPower(0.5);
                 // Assigning power for the right wheels
                 right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
                 right_drive_back.setPower(0.5);
                 sleep(1350);
-                // Go forward
+
+                // Go forward (to the opposite side of the board)
                 left_drive_front.setPower(-0.5);
                 left_drive_back.setPower(-0.5);
                 right_drive_front.setPower(0.5);
                 right_drive_back.setPower(0.5);
                 sleep(1200);
-                //Turn right
+
+                //Turn right (facing board)
                 left_drive_front.setPower(-0.5);
                 left_drive_back.setPower(-0.5);
                 right_drive_front.setPower(-0.5);
                 right_drive_back.setPower(-0.5);
                 sleep(1350);
+
+                // Go forward (closest to the board)
+                // TODO: may need to change this
+                left_drive_front.setPower(-0.2);
+                left_drive_back.setPower(-0.2);
+                right_drive_front.setPower(-0.2);
+                right_drive_back.setPower(-0.2);
+                sleep(500);
+                
+
+                // stop
                 // Assigning power for the left wheels
                 left_drive_front.setPower(0); //use NEGATIVE value for moving forward
                 left_drive_back.setPower(0);
@@ -245,6 +271,7 @@ public class Red_Near_Board extends LinearOpMode {
                 right_drive_front.setPower(0); //use POSITIVE value for moving negative
                 right_drive_back.setPower(0);
                 sleep(500);
+
                 // Dropping the pixel to the board (arms and wrist)
                 left_shoulder.setTargetPosition(540);
                 right_shoulder.setTargetPosition(-540);
