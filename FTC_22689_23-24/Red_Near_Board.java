@@ -179,13 +179,13 @@ public class Red_Near_Board extends LinearOpMode {
                 right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
                 right_drive_back.setPower(0.5);
                 sleep(700);
-                //Turn to left
+                //Turn to rigth
                 // Assigning power for the left wheels
-                left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
-                left_drive_back.setPower(0.5);
+                left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
+                left_drive_back.setPower(-0.5);
                 // Assigning power for the right wheels
-                right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
-                right_drive_back.setPower(0.5);
+                right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
+                right_drive_back.setPower(-0.5);
                 sleep(500);
                 // Put purple pixel down
                 left_drive_front.setPower(0);
@@ -238,6 +238,21 @@ public class Red_Near_Board extends LinearOpMode {
                 right_drive_front.setPower(-0.5);
                 right_drive_back.setPower(-0.5);
                 sleep(1350);
+                // Assigning power for the left wheels
+                left_drive_front.setPower(0); //use NEGATIVE value for moving forward
+                left_drive_back.setPower(0);
+                // Assigning power for the right wheels
+                right_drive_front.setPower(0); //use POSITIVE value for moving negative
+                right_drive_back.setPower(0);
+                sleep(500);
+                // Dropping the pixel to the board (arms and wrist)
+                left_shoulder.setTargetPosition(540);
+                right_shoulder.setTargetPosition(-540);
+                left_shoulder.setPower(0.3);
+                right_shoulder.setPower(0.3);
+                left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                right_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                wrist.setPosition(0.8);
             }
             
             // Assigning power for the left wheels
