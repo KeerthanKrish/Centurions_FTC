@@ -265,11 +265,11 @@ public class Red_Near_Board extends LinearOpMode {
             // Assigning power for the right wheels
             right_drive_front.setPower(0); //use POSITIVE value for moving negative
             right_drive_back.setPower(0);
-            sleep(500);
+            sleep(450);
 
             // Dropping the pixel to the board (arms and wrist)
-            left_shoulder.setTargetPosition(150);
-            right_shoulder.setTargetPosition(-150);
+            left_shoulder.setTargetPosition(175);
+            right_shoulder.setTargetPosition(-175);
             left_shoulder.setPower(0.3);
             right_shoulder.setPower(0.3);
             left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
