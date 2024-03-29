@@ -96,7 +96,7 @@ public class Red_Near_Board extends LinearOpMode {
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
             right_drive_back.setPower(0.5);
-            sleep(2300);
+            sleep(2200);
             left_drive_front.setPower(0);
             left_drive_back.setPower(0);
             right_drive_front.setPower(0);
@@ -176,7 +176,7 @@ public class Red_Near_Board extends LinearOpMode {
         if (pixelLoc == 1){
             //Move forward 
             // TODO: Maybe remove or later this
-            left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
+            setPower(-0.5); //use NEGATIVE value for moving forward
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
             right_drive_back.setPower(0.5);
