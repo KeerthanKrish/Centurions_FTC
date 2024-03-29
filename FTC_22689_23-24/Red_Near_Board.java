@@ -91,6 +91,7 @@ public class Red_Near_Board extends LinearOpMode {
         waitForStart();
 
         if (opModeIsActive()) {
+            // move to the lines
             left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
