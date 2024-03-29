@@ -280,6 +280,9 @@ public class Red_Near_Board extends LinearOpMode {
                 left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 right_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 wrist.setPosition(0.8);
+
+                // reset pixel location 
+                pixelLoc = -1;
             }
             
             // Assigning power for the left wheels
