@@ -102,6 +102,7 @@ public class Red_Near_Board extends LinearOpMode {
             right_drive_front.setPower(0);
             right_drive_back.setPower(0);
             sleep(750);
+
             while (opModeIsActive()) {
 
                 telemetryTfod();
@@ -141,7 +142,7 @@ public class Red_Near_Board extends LinearOpMode {
      * Add telemetry about TensorFlow Object Detection (TFOD) recognitions.
      */
     private void telemetryTfod() {
-
+        telemetry.addLine("Pixel Location variable value: " + pixelLoc);
         List<Recognition> currentRecognitions = tfod.getRecognitions();
         telemetry.addData("# Objects Detected", currentRecognitions.size());
         
@@ -172,125 +173,125 @@ public class Red_Near_Board extends LinearOpMode {
             }
         }
 
-            if (pixelLoc == 1){
-                //Move forward
-                left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
-                left_drive_back.setPower(-0.5);
-                right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
-                right_drive_back.setPower(0.5);
-                sleep(700);
+        if (pixelLoc == 1){
+            //Move forward
+            left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
+            left_drive_back.setPower(-0.5);
+            right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
+            right_drive_back.setPower(0.5);
+            sleep(700);
 
-                //Turn to rigth
-                // Assigning power for the left wheels
-                left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
-                left_drive_back.setPower(-0.5);
-                // Assigning power for the right wheels
-                right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
-                right_drive_back.setPower(-0.5);
-                sleep(1500);
+            //Turn to rigth
+            // Assigning power for the left wheels
+            left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
+            left_drive_back.setPower(-0.5);
+            // Assigning power for the right wheels
+            right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
+            right_drive_back.setPower(-0.5);
+            sleep(1500);
 
-                // Put purple pixel down
-                left_drive_front.setPower(0);
-                left_drive_back.setPower(0);
-                right_drive_front.setPower(0);
-                right_drive_back.setPower(0);
+            // Put purple pixel down
+            left_drive_front.setPower(0);
+            left_drive_back.setPower(0);
+            right_drive_front.setPower(0);
+            right_drive_back.setPower(0);
 
-                // Open the hand
-                hands.setPosition(0.5);
-                sleep(1000);
+            // Open the hand
+            hands.setPosition(0.5);
+            sleep(1000);
 
-                //Turn to left (facing left side of the map)
-                // Assigning power for the left wheels
-                left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
-                left_drive_back.setPower(0.5);
-                // Assigning power for the right wheels
-                right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
-                right_drive_back.setPower(0.5);
-                sleep(500);
+            //Turn to left (facing left side of the map)
+            // Assigning power for the left wheels
+            left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
+            left_drive_back.setPower(0.5);
+            // Assigning power for the right wheels
+            right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
+            right_drive_back.setPower(0.5);
+            sleep(500);
 
-                /* 
-                    Back up to first spot
-                    Back up to the tile behind - get out of the pixel area
-                */
-                left_drive_front.setPower(0.5);
-                left_drive_back.setPower(0.5);
-                right_drive_front.setPower(-0.5);
-                right_drive_back.setPower(-0.5);
-                sleep(900);
+            /* 
+                Back up to first spot
+                Back up to the tile behind - get out of the pixel area
+            */
+            left_drive_front.setPower(0.5);
+            left_drive_back.setPower(0.5);
+            right_drive_front.setPower(-0.5);
+            right_drive_back.setPower(-0.5);
+            sleep(900);
 
-                // Turn to right (facing board)
-                left_drive_front.setPower(-0.5);
-                left_drive_back.setPower(-0.5);
-                right_drive_front.setPower(-0.5);
-                right_drive_back.setPower(-0.5);
-                sleep(1350);
+            // Turn to right (facing board)
+            left_drive_front.setPower(-0.5);
+            left_drive_back.setPower(-0.5);
+            right_drive_front.setPower(-0.5);
+            right_drive_back.setPower(-0.5);
+            sleep(1350);
 
-                // Go forward (all the way to the trapezoid in front of the board)
-                left_drive_front.setPower(-0.5);
-                left_drive_back.setPower(-0.5);
-                right_drive_front.setPower(0.5);
-                right_drive_back.setPower(0.5);
-                sleep(3600);
+            // Go forward (all the way to the trapezoid in front of the board)
+            left_drive_front.setPower(-0.5);
+            left_drive_back.setPower(-0.5);
+            right_drive_front.setPower(0.5);
+            right_drive_back.setPower(0.5);
+            sleep(3600);
 
-                // turn left (to face perpendicular to the board)
-                left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
-                left_drive_back.setPower(0.5);
-                // Assigning power for the right wheels
-                right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
-                right_drive_back.setPower(0.5);
-                sleep(1350);
+            // turn left (to face perpendicular to the board)
+            left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
+            left_drive_back.setPower(0.5);
+            // Assigning power for the right wheels
+            right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
+            right_drive_back.setPower(0.5);
+            sleep(1350);
 
-                // Go forward (to the opposite side of the board)
-                left_drive_front.setPower(-0.5);
-                left_drive_back.setPower(-0.5);
-                right_drive_front.setPower(0.5);
-                right_drive_back.setPower(0.5);
-                sleep(1200);
+            // Go forward (to the opposite side of the board)
+            left_drive_front.setPower(-0.5);
+            left_drive_back.setPower(-0.5);
+            right_drive_front.setPower(0.5);
+            right_drive_back.setPower(0.5);
+            sleep(1200);
 
-                //Turn right (facing board)
-                left_drive_front.setPower(-0.5);
-                left_drive_back.setPower(-0.5);
-                right_drive_front.setPower(-0.5);
-                right_drive_back.setPower(-0.5);
-                sleep(1350);
+            //Turn right (facing board)
+            left_drive_front.setPower(-0.5);
+            left_drive_back.setPower(-0.5);
+            right_drive_front.setPower(-0.5);
+            right_drive_back.setPower(-0.5);
+            sleep(1350);
 
-                // Go forward (closest to the board)
-                // TODO: may need to change this
-                left_drive_front.setPower(-0.2);
-                left_drive_back.setPower(-0.2);
-                right_drive_front.setPower(-0.2);
-                right_drive_back.setPower(-0.2);
-                sleep(500);
-                
-
-                // stop
-                // Assigning power for the left wheels
-                left_drive_front.setPower(0); //use NEGATIVE value for moving forward
-                left_drive_back.setPower(0);
-                // Assigning power for the right wheels
-                right_drive_front.setPower(0); //use POSITIVE value for moving negative
-                right_drive_back.setPower(0);
-                sleep(500);
-
-                // Dropping the pixel to the board (arms and wrist)
-                left_shoulder.setTargetPosition(540);
-                right_shoulder.setTargetPosition(-540);
-                left_shoulder.setPower(0.3);
-                right_shoulder.setPower(0.3);
-                left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                right_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-                wrist.setPosition(0.8);
-
-                // reset pixel location 
-                pixelLoc = -1;
-            }
+            // Go forward (closest to the board)
+            // TODO: may need to change this
+            left_drive_front.setPower(-0.2);
+            left_drive_back.setPower(-0.2);
+            right_drive_front.setPower(-0.2);
+            right_drive_back.setPower(-0.2);
+            sleep(500);
             
+
+            // stop
             // Assigning power for the left wheels
             left_drive_front.setPower(0); //use NEGATIVE value for moving forward
             left_drive_back.setPower(0);
             // Assigning power for the right wheels
             right_drive_front.setPower(0); //use POSITIVE value for moving negative
             right_drive_back.setPower(0);
+            sleep(500);
+
+            // Dropping the pixel to the board (arms and wrist)
+            left_shoulder.setTargetPosition(540);
+            right_shoulder.setTargetPosition(-540);
+            left_shoulder.setPower(0.3);
+            right_shoulder.setPower(0.3);
+            left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            right_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            wrist.setPosition(0.8);
+
+            // reset pixel location 
+            pixelLoc = -1;
+        }
+        
+        // Assigning power for the left wheels
+        left_drive_front.setPower(0); //use NEGATIVE value for moving forward
+        left_drive_back.setPower(0);
+        // Assigning power for the right wheels
+        right_drive_front.setPower(0); //use POSITIVE value for moving negative
+        right_drive_back.setPower(0);
         }   // end for() loop
 
     }   // end method telemetryTfod()
