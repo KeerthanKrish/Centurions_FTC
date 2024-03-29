@@ -80,7 +80,7 @@ public class Red_Near_Board extends LinearOpMode {
         hands = hardwareMap.get(Servo.class, "hands_servo");
         
         wrist.setPosition(0.5);
-        hands.setPosition(0.7);
+        hands.setPosition(0.9);
 
         initTfod();
 
