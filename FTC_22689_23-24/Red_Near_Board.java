@@ -174,7 +174,8 @@ public class Red_Near_Board extends LinearOpMode {
         }
 
         if (pixelLoc == 1){
-            //Move forward
+            //Move forward 
+            // TODO: Maybe remove or later this
             left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
@@ -188,7 +189,7 @@ public class Red_Near_Board extends LinearOpMode {
             // Assigning power for the right wheels
             right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
             right_drive_back.setPower(-0.5);
-            sleep(2500);
+            sleep(1500);
 
             // Put purple pixel down
             left_drive_front.setPower(0);
@@ -224,7 +225,7 @@ public class Red_Near_Board extends LinearOpMode {
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(-0.5);
             right_drive_back.setPower(-0.5);
-            sleep(1350);
+            sleep(2500);
 
             // Go forward (all the way to the trapezoid in front of the board)
             left_drive_front.setPower(-0.5);
