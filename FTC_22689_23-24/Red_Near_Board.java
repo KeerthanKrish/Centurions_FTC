@@ -81,7 +81,7 @@ public class Red_Near_Board extends LinearOpMode {
         hands = hardwareMap.get(Servo.class, "hands_servo");
         
         wrist.setPosition(0.7);
-        hands.setPosition(0.8);
+        hands.setPosition(0.85);
 
         initTfod();
 
@@ -198,7 +198,6 @@ public class Red_Near_Board extends LinearOpMode {
         }
 
         if (pixelLoc == 1){
-
             //Turn to right
             // Assigning power for the left wheels
             left_drive_front.setPower(-0.5); //use NEGATIVE value for moving forward
@@ -253,7 +252,7 @@ public class Red_Near_Board extends LinearOpMode {
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(-0.5);
             right_drive_back.setPower(-0.5);
-            sleep(1450);
+            sleep(1300);
             
             left_drive_front.setPower(0);
             left_drive_back.setPower(0);
@@ -310,11 +309,13 @@ public class Red_Near_Board extends LinearOpMode {
             //Pick pixel from robot
             wrist.setPosition(0);
             sleep(1000);
-            hands.setPosition(0.8);
+            hands.setPosition(0.85);
             sleep(1000);
             wrist.setPosition(0.2);
             sleep(500);
-            wrist.setPosition(0.4);
+            wrist.setPosition(0.5);
+            sleep(500);
+            wrist.setPosition(0.9);
             sleep(500);
             wrist.setPosition(0.8);
             sleep(1000);
@@ -331,7 +332,7 @@ public class Red_Near_Board extends LinearOpMode {
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(0.5);
             right_drive_back.setPower(0.5);
-            sleep(900);
+            sleep(800);
 
             // stop
             // Assigning power for the left wheels
@@ -370,7 +371,7 @@ public class Red_Near_Board extends LinearOpMode {
             // Assigning power for the right wheels
             right_drive_front.setPower(-0.3); //use POSITIVE value for moving negative
             right_drive_back.setPower(-0.3);
-            sleep(730);
+            sleep(700);
             
             left_drive_front.setPower(0); //use NEGATIVE value for moving forward
             left_drive_back.setPower(0);
@@ -381,8 +382,8 @@ public class Red_Near_Board extends LinearOpMode {
             
             left_shoulder.setTargetPosition(350);
             right_shoulder.setTargetPosition(-350);
-            left_shoulder.setPower(0.3);
-            right_shoulder.setPower(0.3);
+            left_shoulder.setPower(0.1);
+            right_shoulder.setPower(0.1);
             left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             right_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             
@@ -426,7 +427,7 @@ public class Red_Near_Board extends LinearOpMode {
             // Assigning power for the right wheels
             right_drive_front.setPower(0.5); //use POSITIVE value for moving backward
             right_drive_back.setPower(0.5);
-            sleep(700);
+            sleep(520);
 
             left_drive_front.setPower(0);
             left_drive_back.setPower(0);
@@ -439,12 +440,13 @@ public class Red_Near_Board extends LinearOpMode {
 
             //Move backwards (facing left side of the map)
             // Assigning power for the left wheels
+             
             left_drive_front.setPower(0.5); //use NEGATIVE value for moving forward
             left_drive_back.setPower(0.5);
             // Assigning power for the right wheels
             right_drive_front.setPower(-0.5); //use POSITIVE value for moving backward
             right_drive_back.setPower(-0.5);
-            sleep(700);
+            sleep(520);
 
             /* 
                 Back up to first spot
@@ -461,13 +463,14 @@ public class Red_Near_Board extends LinearOpMode {
             right_drive_front.setPower(0);
             right_drive_back.setPower(0);
             sleep(500);
+            
 
-            // Turn to left ( facimng away from board)
+            // Turn to right ( facimng away from board)
             left_drive_front.setPower(-0.5);
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(-0.5);
             right_drive_back.setPower(-0.5);
-            sleep(1500);
+            sleep(1370);
             
             left_drive_front.setPower(0);
             left_drive_back.setPower(0);
@@ -494,11 +497,13 @@ public class Red_Near_Board extends LinearOpMode {
             //Pick pixel from robot
             wrist.setPosition(0);
             sleep(1000);
-            hands.setPosition(0.8);
+            hands.setPosition(0.85);
             sleep(1000);
             wrist.setPosition(0.2);
             sleep(500);
             wrist.setPosition(0.4);
+            sleep(500);
+            wrist.setPosition(0.9);
             sleep(500);
             wrist.setPosition(0.8);
             sleep(1000);
@@ -515,7 +520,7 @@ public class Red_Near_Board extends LinearOpMode {
             left_drive_back.setPower(-0.5);
             right_drive_front.setPower(0.5);
             right_drive_back.setPower(0.5);
-            sleep(900);
+            sleep(1000);
 
             // stop
             // Assigning power for the left wheels
@@ -554,7 +559,7 @@ public class Red_Near_Board extends LinearOpMode {
             // Assigning power for the right wheels
             right_drive_front.setPower(-0.3); //use POSITIVE value for moving negative
             right_drive_back.setPower(-0.3);
-            sleep(730);
+            sleep(660);
             
             left_drive_front.setPower(0); //use NEGATIVE value for moving forward
             left_drive_back.setPower(0);
@@ -672,7 +677,7 @@ public class Red_Near_Board extends LinearOpMode {
             //Pick pixel from robot
             wrist.setPosition(0);
             sleep(1000);
-            hands.setPosition(0.8);
+            hands.setPosition(0.85);
             sleep(1000);
             wrist.setPosition(0.2);
             sleep(500);
