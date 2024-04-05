@@ -106,9 +106,12 @@ public class Final_Control extends LinearOpMode {
 
             // Shooting the plane
             if (gamepad2.a){
-                Drone_Shooter.setPower(1);
+                Drone_Shooter.setPower(-1);
             }
-            
+            else {
+                Drone_Shooter.setPower(0);
+            }
+
             if(gamepad2.dpad_left){
                 left_drive_front.setPower(-0.9);
                 left_drive_back.setPower(1);
