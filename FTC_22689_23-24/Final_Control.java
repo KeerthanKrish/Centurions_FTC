@@ -28,8 +28,11 @@ public class Final_Control extends LinearOpMode {
     private DcMotor right_shoulder;
     private Servo wrist;
     private Servo hands;
+    private DcMotor Drone_Shooter;
 
     public void runOpMode() {
+        // Drone Shooter 
+        Drone_Shooter = hardwareMap.get(DcMotor.class,"Drone_Shooter");
         // Front Wheels
         left_drive_front = hardwareMap.get(DcMotor.class, "motor_front_left");
         right_drive_front = hardwareMap.get(DcMotor.class, "motor_front_right");
@@ -66,11 +69,17 @@ public class Final_Control extends LinearOpMode {
         double powerLeft = 0;
         double powerRight = 0;
         
+        // declaring variable for powerForWrist
+        double powerForWrist = 0;
+        
         while (opModeIsActive()) {
+            
             //Displaying encoder ticks for shoulder
             telemetry.update();
             telemetry.addData("RIGHT Motor Ticks: ", right_shoulder.getCurrentPosition());
             telemetry.addData("LEFT Motor Ticks: ", left_shoulder.getCurrentPosition());
+            // getting input from gamepad 1  
+            powerForWrist = this.gamepad1.right_stick_y;
             
             // Getting input from gamePad
             powerLeft = this.gamepad2.left_stick_y;
@@ -84,8 +93,22 @@ public class Final_Control extends LinearOpMode {
             right_drive_front.setPower(-powerRight);
             right_drive_back.setPower(-powerRight);
             
+            // adding power to move the wrist up/down
+            /*while (powerForWrist < 0) { // stick up
+                double currPosWrist = wrist.getPosition();
+                double newPosWrist = currPosWrist + 0.05;
+                
+                telemetry.addData("New position: ", newPosWrist);
+                telemetry.update();
+                wrist.setPosition(newPosWrist);
+            }*/
+            
+
             //Crabbing right
-            if(gamepad2.dpad_right){
+            if (gamepad2.a){
+                Drone_Shooter.setPower(1);
+            }
+            if(gamepad2.dpad_left){
                 left_drive_front.setPower(-0.9);
                 left_drive_back.setPower(1);
                 right_drive_front.setPower(-0.9);
@@ -93,7 +116,7 @@ public class Final_Control extends LinearOpMode {
             }
             
             //Crabbing left
-            if(gamepad2.dpad_left){
+            if(gamepad2.dpad_right){
                 left_drive_front.setPower(0.9);
                 left_drive_back.setPower(-1);
                 right_drive_front.setPower(0.9);
@@ -103,25 +126,30 @@ public class Final_Control extends LinearOpMode {
             //Close hand
             if (this.gamepad1.x)
             {
-                hands.setPosition(0.8);
+                wrist.setPosition(1);
             }
             
             //Open hand
             if (this.gamepad1.b)
             {
-                hands.setPosition(0.5);   
+                hands.setPosition(0.5);
+                
             }
             
             //Put wrist down    
             if (this.gamepad1.a)
             {
-                wrist.setPosition(1);
+                hands.setPosition(0.8);
+                   
+               
             }
             
             //Pull wrist up
             if (this.gamepad1.y)
             {
-                wrist.setPosition(0);   
+                wrist.setPosition(0); 
+                
+                  
             }
             
             //Move arm up
@@ -149,7 +177,7 @@ public class Final_Control extends LinearOpMode {
             }
             
             //Move arm and wrist position to board position
-            if(gamepad1.dpad_right && left_shoulder.getCurrentPosition() < 1400 && right_shoulder.getCurrentPosition() > -1400){
+            if(gamepad1.dpad_right){
                 left_shoulder.setTargetPosition(540);
                 right_shoulder.setTargetPosition(-540);
                 left_shoulder.setPower(0.3);
@@ -172,13 +200,26 @@ public class Final_Control extends LinearOpMode {
             
             //Send arm to max (up) position
             if(gamepad1.left_stick_y == -1){
+                // Move arm
                 left_shoulder.setTargetPosition(1399);
                 right_shoulder.setTargetPosition(-1399);
                 left_shoulder.setPower(0.2);
-                right_shoulder.setPower(-0.2);
+                right_shoulder.setPower(0.2);
                 left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
                 right_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            }
+            
+            // Freaky Mode (move arm past 1400 & adjust wrist)
+            if (gamepad1.dpad_left) {
+                // Move wrist
+                wrist.setPosition(0.3);
                 
+                left_shoulder.setTargetPosition(1800);
+                right_shoulder.setTargetPosition(-1800);
+                left_shoulder.setPower(0.15);
+                right_shoulder.setPower(0.15);
+                left_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                right_shoulder.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             }
         }
     }
