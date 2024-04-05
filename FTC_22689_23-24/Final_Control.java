@@ -104,10 +104,11 @@ public class Final_Control extends LinearOpMode {
             }*/
             
 
-            //Crabbing right
+            // Shooting the plane
             if (gamepad2.a){
                 Drone_Shooter.setPower(1);
             }
+            
             if(gamepad2.dpad_left){
                 left_drive_front.setPower(-0.9);
                 left_drive_back.setPower(1);
